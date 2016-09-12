@@ -1,0 +1,3 @@
+[submodule "TodoList-iOS"]
+	path = TodoList-iOS
+	url = https://github.com/IBM-Swift/TodoList-iOS.git
