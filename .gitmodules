@@ -1,3 +1,6 @@
 [submodule "TodoList-iOS"]
 	path = TodoList-iOS
 	url = https://github.com/IBM-Swift/TodoList-iOS.git
+[submodule "TodoList-Server"]
+	path = TodoList-Server
+	url = https://github.com/IBM-Swift/TodoList-CouchDB.git
