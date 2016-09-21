@@ -38,7 +38,7 @@ esac
 done
 
 # Variables
-database=todo
+database=TodoList-CouchDB
 
 echo "Variables:"
 echo -e "  username: $username"
