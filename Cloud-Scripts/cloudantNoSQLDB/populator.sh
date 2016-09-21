@@ -19,8 +19,24 @@
 # If any commands fail, we want the shell script to exit immediately.
 set -e
 
-cd ../../TodoList-Server/Database
-./setup.sh
+# Set scripts folder variable
+scriptsFolder="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+echo "scriptsFolder: $scriptsFolder"
+
+# Parse input parameters
+source "$scriptsFolder/parse_inputs.sh"
+
+# Delete to do database just in case it already exists (we need a clean slate)
+curl -X DELETE https://$username.cloudant.com/$database -u $username:$password
+
+# Create todo database
+curl -X PUT https://$username.cloudant.com/$database -u $username:$password
+
+# Upload design document
+curl -X PUT "https://$username.cloudant.com/todo/_design/main_design" -u $username:$password -d @"$scriptsFolder/main_design.json"
+
+# Create user documents
+curl -H "Content-Type: application/json" -d @"$scriptsFolder/users.json" -X POST https://$username.cloudant.com/$database/_bulk_docs -u $username:$password
 
 echo
 echo "Finished populating cloudant database '$database'."
