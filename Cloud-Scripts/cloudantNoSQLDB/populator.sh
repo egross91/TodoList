@@ -33,7 +33,7 @@ curl -X DELETE https://$username.cloudant.com/$database -u $username:$password
 curl -X PUT https://$username.cloudant.com/$database -u $username:$password
 
 # Upload design document
-curl -X PUT "https://$username.cloudant.com/todolist/_design/main_design" -u $username:$password -d @"$scriptsFolder/main_design.json"
+curl -X PUT "https://$username.cloudant.com/todolist/_design/todosdesign" -u $username:$password -d @"$scriptsFolder/main_design.json"
 
 echo
 echo "Finished populating cloudant database '$database'."
