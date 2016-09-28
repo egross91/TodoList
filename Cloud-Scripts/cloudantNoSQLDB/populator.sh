@@ -27,10 +27,10 @@ echo "scriptsFolder: $scriptsFolder"
 source "$scriptsFolder/parse_inputs.sh"
 
 # Delete to do database just in case it already exists (we need a clean slate)
-curl -X DELETE https://$username.cloudant.com/$database -u $username:$password
+curl -X DELETE https://$username.cloudant.com/todolist -u $username:$password
 
 # Create todo database
-curl -X PUT https://$username.cloudant.com/$database -u $username:$password
+curl -X PUT https://$username.cloudant.com/todolist -u $username:$password
 
 # Upload design document
 curl -X PUT "https://$username.cloudant.com/todolist/_design/todosdesign" -u $username:$password -d @"$scriptsFolder/main_design.json"
