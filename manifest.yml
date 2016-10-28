@@ -1,7 +1,7 @@
 declared-services:
   TodoList-CouchDB:
     label: cloudantNoSQLDB
-    plan: Shared
+    plan: Lite
 applications:
 - name: todolist-couchdb
   path: ./TodoList-Server
