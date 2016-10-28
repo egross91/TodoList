@@ -4,6 +4,7 @@ declared-services:
     plan: Lite
 applications:
 - name: TodoListCloudantApp
+  path: ./TodoList-Server
   memory: 256M
   instances: 1
   random-route: true
