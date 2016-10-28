@@ -6,7 +6,7 @@ applications:
 - name: todolist-couchdb
   path: ./TodoList-Server
   memory: 256M
-  instances: 2
+  instances: 1
   random-route: true
   services:
   - TodoList-CouchDB
